@@ -24,10 +24,10 @@ class Sink<Observer: ObserverType>: Disposable {
     }
 
     final func forwardOn(_ event: Event<Observer.Element>) {
-        #if DEBUG
-            self.synchronizationTracker.register(synchronizationErrorMessage: .default)
-            defer { self.synchronizationTracker.unregister() }
-        #endif
+//        #if DEBUG
+//            self.synchronizationTracker.register(synchronizationErrorMessage: .default)
+//            defer { self.synchronizationTracker.unregister() }
+//        #endif
         if isFlagSet(self.disposed, 1) {
             return
         }
